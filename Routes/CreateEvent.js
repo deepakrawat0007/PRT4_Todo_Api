@@ -54,9 +54,11 @@ router.put("/events/updateStatus/:id", async(req ,res)=>{
             new:true,
             userFindAndModity:false
         })
+
+        const events = await Events.find()
         return res.status(200).json({
             "message":"Updated Data",
-            "data" :event
+            "data" :events
         })
 
 
